@@ -1,0 +1,26 @@
+# Dependencias
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Archivos de construcción
+/build
+/dist
+
+# Directorios de cache
+.cache
+/tmp
+
+# Archivos específicos del entorno de desarrollo
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.dockerignore
+.git
+.gitignore
+.DS_Store
+.idea
+.vscode
+*.swp
+*.swo

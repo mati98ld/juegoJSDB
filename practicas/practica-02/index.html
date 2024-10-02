@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practica 2</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body id="body">
+    <div class="inciso">
+      <h2>Ejercicio 16</h2>
+
+      <form id="formularioImagen">
+        <input
+          id="inputImagen"
+          class="selectImg"
+          type="text"
+          placeholder="Imagen #"
+        />
+        <button type="submit" class="btn">Mostrar</button>
+      </form>
+
+      <div>
+        <img
+          id="imagen-1"
+          src="asset/JS logo.webp"
+          class="esconder"
+          alt="imagen-1"
+        />
+        <img
+          id="imagen-2"
+          src="asset/logoInfoUNLP.webp"
+          class="esconder"
+          alt="imagen-2"
+        />
+        <img
+          id="imagen-3"
+          src="asset/UNLPlogo.svg"
+          class="esconder"
+          alt="imagen-3"
+        />
+      </div>
+    </div>
+
+    <!-- ejercicio 17 -->
+    <div class="inciso">
+      <h2>Ejercicio 17</h2>
+      <div class="divBotones">
+        <button id="btn-img1" value="imagen-1" class="btn">Imagen 1</button>
+        <button id="btn-img2" value="imagen-2" class="btn">Imagen 2</button>
+        <button id="btn-img3" value="imagen-3" class="btn">Imagen 3</button>
+      </div>
+      <div class="divBotones">
+        <button id="btn-todas" value="Todas" class="btn">Mostrar todas</button>
+        <button id="btn-ninguna" value="Vacio" class="btn">Ninguna</button>
+      </div>
+    </div>
+
+    <div class="inciso">
+      <h2>Ejercicio 18</h2>
+      <div>
+        <select id="fondoSelector">
+          <option value="red">Rojo</option>
+          <option value="green">Verde</option>
+          <option value="white" selected>Blanco</option>
+          <option value="blue">Azul</option>
+        </select>
+        <button id="btnSelectorFondo" class="btn">Seleccionar</button>
+      </div>
+    </div>
+  </body>
+
+  <!-- ejercicio 19 -->
+  <div class="inciso">
+    <h2>Ejercicio 19</h2>
+    <div>
+      <select id="selectColor">
+        <option value="red">Rojo</option>
+        <option value="green">Verde</option>
+        <option value="white" selected>Blanco</option>
+        <option value="blue">Azul</option>
+      </select>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</html>

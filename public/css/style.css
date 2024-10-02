@@ -1,0 +1,219 @@
+body {
+  background-color: #000;
+  text-align: center;
+  color: #f0db4f;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.modal-content,
+.modal-body {
+  background-color: #000 !important;
+  border-radius: 12px !important;
+}
+
+.modal-content {
+  border: #f0db4f 2px solid !important;
+}
+
+.modal-dialog {
+  transform: translateY(20vh) !important;
+}
+
+#menu {
+  display: flex;
+  flex-direction: column;
+}
+
+#tablero {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 100%;
+  height: 550px;
+}
+
+.casilla {
+  background-color: #f0db4f;
+  color: #000;
+  font-size: 2em;
+  padding: 20px;
+  border-radius: 10px;
+  width: 95%;
+  height: 95%;
+  position: relative;
+}
+
+#dado {
+  font-size: 3.5em;
+  color: #f0db4f;
+  background-color: transparent;
+  border: #f0db4f 2px solid;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  display: block;
+  padding: 8px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.ficha {
+  font-size: 2em;
+  color: #000000;
+  border: #000000 2px solid;
+  width: 55px;
+  height: 55px;
+  margin: 0 auto;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+}
+
+.ficha4 {
+  left: 20%;
+}
+
+.ficha3 {
+  left: 30%;
+}
+
+.ficha1 {
+  left: 40%;
+}
+
+.ficha0 {
+  left: 50%;
+}
+
+.ficha2 {
+  left: 60%;
+}
+
+.ficha5 {
+  left: 70%;
+}
+
+#liveToast {
+  margin-top: 16px;
+}
+
+.largada,
+.llegada {
+  height: 125px;
+  width: 25%;
+}
+
+.largada {
+  float: left;
+}
+
+.llegada {
+  float: right;
+}
+
+#dadoSector {
+  position: relative;
+  top: 10px;
+}
+
+#cabecera {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+li,
+ul {
+  background-color: black !important;
+}
+
+#salaEspera {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+#formRespuesta {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px;
+  padding: 8px;
+  gap: 12px;
+  border-radius: 12px;
+}
+
+#opciones {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  margin: auto;
+  gap: 8px;
+}
+
+#opciones label {
+  margin-left: 8px;
+}
+
+#btnResponder {
+  align-self: center;
+  margin: 0px !important;
+}
+
+.custom-toast {
+  padding: 30px;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+#divJugadores {
+  display: flex;
+  margin-top: 12px;
+}
+
+#countdown {
+  font-size: 2em;
+}
+
+.gestor {
+  background-color: black;
+  width: fit-content;
+  gap: 6px;
+}
+
+.input-group ::placeholder {
+  color: #f0db4f;
+  opacity: 51%;
+}
+
+#pregunta {
+  min-width: 360px;
+}
+
+#gestorPreguntas {
+  border: solid 1px #f0db4f;
+  border-radius: 12px;
+  width: fit-content;
+  margin: auto;
+}
+
+#formPregunta button {
+  margin: 0 auto;
+  width: 50%;
+  margin-top: 4px;
+}
+
+img {
+  max-width: 300px;
+  margin: auto;
+}
+
+audio {
+  margin: auto;
+}
+
+#tipoPregunta {
+  width: fit-content;
+  margin: auto;
+}

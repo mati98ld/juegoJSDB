@@ -1,0 +1,31 @@
+{
+  "name": "entregas",
+  "version": "1.0.0",
+  "description": "Repositorio de prácticas del Seminario de Lenguajes JavaScript",
+  "license": "MIT",
+  "author": "Adán Mauri Ungaro <adan.mauri@gmail.com>",
+  "type": "module",
+  "main": "app/index.js",
+  "scripts": {
+    "dev": "nodemon app/index.js",
+    "prettier": "npx prettier app  --write",
+    "start": "node app/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.0",
+    "mongoose": "^8.4.4",
+    "socket.io": "^4.7.5",
+    "socket.io-client": "^4.7.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.24.7",
+    "@babel/core": "^7.24.7",
+    "@babel/node": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
+    "nodemon": "^3.1.4",
+    "prettier": "^3.2.5"
+  }
+}

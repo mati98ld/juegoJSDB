@@ -1,0 +1,157 @@
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 6</title>
+  </head>
+  <body>
+    <h1>Ejercicio 6</h1>
+    <div class="divInputs">
+      <input type="text" id="inputBusqueda" />
+      <button id="btnBusqueda">Buscar</button><!doctype html>
+      <select id="selector">
+        <option value="" disabled selected>ORDENAR</option>
+        <option value="nombre">Nombre</option>
+        <option value="poblacion">Poblacion</option>
+        <option value="capital">Capital</option>
+      </select>
+    </div>
+    <div id="infoPaises"></div>
+  </body>
+  <script>
+    const divPaises = document.getElementById('infoPaises')
+    let paises = []
+
+    const borrarTodo = () => {
+      while (divPaises.firstChild) {
+        divPaises.removeChild(divPaises.firstChild)
+      }
+    }
+
+    const agregarPais = (data) => {
+      let ul = document.createElement('ul')
+      let nombre = document.createElement('li')
+      let capital = document.createElement('li')
+      let poblacion = document.createElement('li')
+      let bandera = document.createElement('li')
+      let ubicacion = document.createElement('li')
+
+      nombre.innerHTML = 'Nombre: ' + data.name.common
+      ul.appendChild(nombre)
+
+      capital.innerHTML = 'Capital: ' + data.capital
+      ul.appendChild(capital)
+
+      poblacion.innerHTML = 'Población: ' + data.population
+      ul.appendChild(poblacion)
+
+      let a = document.createElement('a')
+      a.href = data.maps.googleMaps
+      a.innerHTML = data.maps.googleMaps
+      ubicacion.innerHTML = 'Ubicación: '
+      ubicacion.appendChild(a)
+      ul.appendChild(ubicacion)
+
+      bandera.innerHTML = 'Bandera: '
+      let img = document.createElement('img')
+      img.src = data.flags.png
+      ul.appendChild(bandera)
+      ul.appendChild(img)
+
+      divPaises.appendChild(ul)
+    }
+
+    fetch('https://restcountries.com/v3.1/all')
+      .then((response) => response.json())
+      .then((data) => {
+        paises = data
+        data.forEach((pais) => {
+          agregarPais(pais)
+        })
+      })
+      .catch((error) => console.error('Error:', error))
+
+    let input = document.getElementById('inputBusqueda')
+    let btn = document.getElementById('btnBusqueda')
+
+    btn.addEventListener('click', () => {
+      borrarTodo()
+      let filtrados = paises.filter((pais) =>
+        pais.name.common.toUpperCase().includes(input.value.toUpperCase()),
+      )
+      if (filtrados.length != 0) filtrados.forEach((p) => agregarPais(p))
+      else {
+        let msg = document.createElement('h1')
+        msg.innerHTML = 'No se encontró coincidencia'
+        divPaises.appendChild(msg)
+      }
+    })
+
+    let selector = document.getElementById('selector')
+
+    selector.addEventListener('change', () => {
+      switch (selector.value) {
+        case 'nombre':
+          borrarTodo()
+          paises
+            .sort((a, b) => {
+              if (a.name.common < b.name.common) return -1
+              if (a.name.common > b.name.common) return 1
+              return 0
+            })
+            .forEach((p) => agregarPais(p))
+          break
+        case 'poblacion':
+          borrarTodo()
+          paises
+            .sort((a, b) => b.population - a.population)
+            .forEach((p) => agregarPais(p))
+          break
+        default:
+          borrarTodo()
+          paises
+            .sort((a, b) => {
+              if (a.capital < b.capital) return -1
+              if (a.capital > b.capital) return 1
+              return 0
+            })
+            .forEach((p) => agregarPais(p))
+      }
+    })
+  </script>
+</html>
+
+<style>
+  body {
+    background-color: #242424;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  h1 {
+    color: aliceblue;
+    text-align: center;
+  }
+
+  ul {
+    margin-bottom: 48px;
+  }
+
+  li {
+    color: aliceblue;
+    margin: 4px;
+  }
+
+  .divInputs {
+    gap: 12px;
+    margin-left: 64px;
+  }
+
+  select {
+    margin-left: 64px;
+  }
+</style>

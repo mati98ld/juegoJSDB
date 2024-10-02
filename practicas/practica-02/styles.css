@@ -1,0 +1,39 @@
+img {
+  max-height: 250px;
+  padding: 12px;
+}
+
+input,
+select {
+  min-height: 24px;
+  min-width: 250px;
+  padding: 6px;
+}
+
+#formularioImagen {
+  margin-bottom: 24px;
+}
+
+.esconder {
+  display: none;
+}
+
+.mostrar {
+  display: inline;
+}
+
+.inciso {
+  margin: 12px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.btn {
+  padding: 10px;
+  margin: 5px;
+}
+
+.divBotones {
+  text-align: center;
+}
