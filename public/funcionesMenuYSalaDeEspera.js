@@ -54,6 +54,7 @@ const dibujarMenu = () => {
 
   let gestorPreguntas = document.createElement('div')
   gestorPreguntas.id = 'gestorPreguntas'
+  gestorPreguntas.style.display = 'none'
   gestorPreguntas.classList.add('mt-5', 'p-1')
   gestorPreguntas.innerHTML = `
   <h2>Gestor de preguntas</h2>
