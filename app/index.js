@@ -13,7 +13,7 @@ connectDB()
 
 const app = express()
 app.use(cors())
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3030
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
