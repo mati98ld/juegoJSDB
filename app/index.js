@@ -3,8 +3,6 @@ import express from 'express'
 import { fileURLToPath } from 'url'
 import indexRouter from './routes/index.js'
 import path from 'path'
-import usersRouter from './routes/users.js'
-import vehiclesRouter from './routes/vehicles.js'
 import { Server as SocketIOServer } from 'socket.io'
 import { createServer } from 'http'
 import cors from 'cors'
@@ -15,7 +13,7 @@ connectDB()
 
 const app = express()
 app.use(cors())
-const port = 3000
+const port = process.env.PORT || 3000
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
@@ -36,8 +34,6 @@ app.use(express.static(path.join(__dirname, '..', 'public')))
 
 // Configuración de rutas
 app.use('/', indexRouter)
-app.use('/users', usersRouter)
-app.use('/vehicles', vehiclesRouter)
 
 // Cambiar app.listen por server.listen para integrar socket.io
 const httpServer = server.listen(port, () => {
