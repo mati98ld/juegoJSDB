@@ -54,7 +54,6 @@ const dibujarMenu = () => {
 
   let gestorPreguntas = document.createElement('div')
   gestorPreguntas.id = 'gestorPreguntas'
-  gestorPreguntas.style.display = 'none'
   gestorPreguntas.classList.add('mt-5', 'p-1')
   gestorPreguntas.innerHTML = `
   <h2>Gestor de preguntas</h2>
@@ -64,7 +63,7 @@ const dibujarMenu = () => {
   <div class="collapse" id="collapseExample">
   <form id="formPregunta">
   <div class="card card-body gestor">
-  <select class="form-select bg-black text-warning" id="tipoPregunta">
+  <select class="form-select bg-black text-warning" style="display: none" id="tipoPregunta">
   <option selected value="clasic">Sin multimedia</option>
   <option value="image">Con imagen</option>
   <option value="audio">Con audio</option>
